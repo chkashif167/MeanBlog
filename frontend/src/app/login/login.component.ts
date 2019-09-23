@@ -18,11 +18,16 @@ export class LoginComponent implements OnInit {
   }
 
   loginForm : FormGroup = new FormGroup({
-    email: new FormControl(null, [Validators.email, Validators.required]),
-    password: new FormControl(null, [ Validators.required]),
+    username: new FormControl(null, [Validators.required]),
+    password: new FormControl(null, [Validators.required]),
   });
 
   login() {
-    alert("afdsa")
+    //alert("afdsa")
+    if(!this.loginForm.valid){
+      console.log("invalid form"); return;
+    }
+
+    console.log(JSON.stringify(this.loginForm.value))
   }
 }
