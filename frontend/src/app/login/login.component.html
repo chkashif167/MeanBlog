@@ -1,6 +1,6 @@
 <div class="container">
   <h2>Login Form</h2>
-  <form action="">
+  <form [formGroup]="loginForm">
     <div class="form-group">
       <label for="email">Username:</label>
       <input
@@ -9,19 +9,22 @@
         id="username"
         placeholder="Enter Username"
         name="username"
+        formControlName="username"
+
       />
     </div>
     <div class="form-group">
-      <label for="pwd">Password:</label>
+      <label for="password">Password:</label>
       <input
         type="password"
         class="form-control"
-        id="pwd"
+        id="password"
         placeholder="Enter password"
-        name="pwd"
+        name="password"
+        formControlName="password"
       />
     </div>
-    <button type="button" class="btn btn-primary">Login</button> &nbsp;
+    <button type="button" class="btn btn-primary" (click)="login()">Login</button> &nbsp;
     <button type="button" class="btn btn-primary" (click)="moveToRegister()">
       Register
     </button>
